@@ -32,6 +32,6 @@ node {
       sh 'curl -u admin:redhat@123 -T target/**.war "http://18.209.56.57:8080/manager/text/deploy?path=/gopi&update=true"'
   }
   stage ('SmokeTest') {
-      sh 'curl --retry-delay 10 --retry 5 "http://18.209.56.57/:8080/gopi"'
+      sh 'curl --retry-delay 10 --retry 5 "http://18.209.56.57:8080/gopi"'
   }
 }
