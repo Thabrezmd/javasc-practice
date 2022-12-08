@@ -49,9 +49,9 @@
 
 	
 	<scm>
-		<connection>scm:git:git@github.com:kesavkummari/javacodescan.git</connection>
-		<developerConnection>scm:git:git@github.com:kesavkummari/javacodescan.git</developerConnection>
-		<url>git@github.com:kesavkummari/javacodescan.git</url>
+		<connection>scm:git:git@github.com:github.com/8465047188/projectonar.git</connection>
+		<developerConnection>scm:git:git@github.com:github.com/8465047188/projectonar.git</developerConnection>
+		<url>git@github.com:github.com/8465047188/projectonar.git</url>
 		<tag>HEAD</tag>
 	</scm>
 
