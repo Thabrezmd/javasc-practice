@@ -7,7 +7,6 @@ node {
   stage ('Code Quality') {
       sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore sonar:sonar"
   }
-
   stage ('Clean') {
       sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean"
   }
@@ -30,9 +29,9 @@ node {
       sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore install"
   }
   stage ('Deliver & Deployment') {
-      sh 'curl -u admin:redhat@123 -T target/**.war "http://107.22.158.84:8080/manager/text/deploy?path=/kesav&update=true"'
+      sh 'curl -u admin:redhat@123 -T target/**.war "http://18.209.56.57:8080/manager/text/deploy?path=/gopi&update=true"'
   }
   stage ('SmokeTest') {
-      sh 'curl --retry-delay 10 --retry 5 "http://107.22.158.84:8080/kesav"'
+      sh 'curl --retry-delay 10 --retry 5 "http://18.209.56.57/:8080/gopi"'
   }
 }
