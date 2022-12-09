@@ -17,16 +17,16 @@ node {
       sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore compile"
   }
   stage ('Test') {
-      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore test"
+      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore test -DskipTests"
   }
   stage ('Package') {
-      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore package"
+      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore package -DskipTests"
   }
   stage ('Verify') {
-      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore verify"
+      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore verify -DskipTests"
   }
   stage ('Install') {
-      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore install"
+      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore install -DskipTests"
   }
   stage ('Deliver & Deployment') {
       sh 'curl -u admin:redhat@123 -T target/**.war "http://54.146.212.94:8080/manager/text/deploy?path=/gopi&update=true"'
