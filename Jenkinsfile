@@ -29,9 +29,9 @@ node {
       sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore install"
   }
   stage ('Deliver & Deployment') {
-      sh 'curl -u admin:redhat@123 -T target/**.war "http://18.209.56.57:8080/manager/text/deploy?path=/gopi&update=true"'
+      sh 'curl -u admin:redhat@123 -T target/**.war "http://54.146.212.94:8080/manager/text/deploy?path=/gopi&update=true"'
   }
   stage ('SmokeTest') {
-      sh 'curl --retry-delay 10 --retry 5 "http://18.209.56.57:8080/gopi"'
+      sh 'curl --retry-delay 10 --retry 5 "http://54.146.212.94:8080/gopi"'
   }
 }
