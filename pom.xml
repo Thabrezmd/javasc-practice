@@ -27,10 +27,10 @@
 		<jacoco.version>0.7.9</jacoco.version>
 		
 		<!-- SonarQube Integration -->
-		<sonar.organization>8465047188</sonar.organization>
-		<sonar.projectKey>8465047188_git</sonar.projectKey>
+		<sonar.organization>thabrezmd</sonar.organization>
+		<sonar.projectKey>Thabrezmd_javasc-practice</sonar.projectKey>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.login>c03daf6d2dc754048e645f07bfc6e472f8d4bb0d</sonar.login>
+		<sonar.login>1a9a6a027419dfae19d7a761c468b021f36c5bd6</sonar.login>
 	</properties>
 	
 	<!-- Jfrog Integration with POM.xml file -->
