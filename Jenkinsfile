@@ -25,13 +25,16 @@ node {
   stage ('Verify') {
       sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore verify -DskipTests"
   }
-  stage ('Install') {
+   stage ('Install') {
       sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore install -DskipTests"
-  }
+   }
+    stage ('Deploy') {
+      sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore deploy -DskipTests"
+ }
   stage ('Deliver & Deployment') {
-      sh 'curl -u admin:redhat@123 -T target/**.war "http://3.110.42.239:8080/manager/text/deploy?path=/thabrez&update=true"'
+    sh 'curl -u admin:redhat@123 -T target/**.war "http://3.110.42.239:8080/manager/text/deploy?path=/thabrez&update=true"'
   }
   stage ('SmokeTest') {
-      sh 'curl --retry-delay 10 --retry 5 "http://3.110.42.239:8080/thabrez"'
+    sh 'curl --retry-delay 10 --retry 5 "http://3.110.42.239:8080/thabrez"'
   }
 }
